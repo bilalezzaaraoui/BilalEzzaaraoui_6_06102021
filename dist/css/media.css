@@ -1,0 +1,191 @@
+/** INDEX - RESPONSIVE DESIGN **/
+@media screen and (max-width: 1200px) {
+  .head {
+    -ms-grid-columns: (1fr)[2] !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+  }
+  .head .logo img {
+    width: 150px !important;
+  }
+  .head nav {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 3;
+    -ms-grid-row: 2;
+        grid-row-start: 2;
+    -ms-grid-row-span: 1;
+        grid-row-end: span 1;
+    padding: 1rem 0;
+  }
+  .head nav li {
+    padding: 0px 4px !important;
+  }
+  .head nav li a {
+    font-size: 0.8rem !important;
+    font-weight: 500;
+  }
+  .head .title {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+  .head .title h1 {
+    font-size: 1.5rem !important;
+  }
+  .main {
+    width: 100% !important;
+    grid-column-gap: 1rem !important;
+  }
+  .main a .photo-img {
+    width: 10rem !important;
+    height: 10rem !important;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .main {
+    -ms-grid-columns: (1fr)[2] !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .head {
+    margin: 1rem auto !important;
+  }
+  .head .logo img {
+    width: 120px !important;
+  }
+  .head nav {
+    padding: 0.5rem 0;
+  }
+  .head nav ul li {
+    margin-bottom: 15px !important;
+  }
+  .head nav ul li a {
+    font-size: 0.8rem !important;
+    font-weight: 500;
+  }
+  .head .title h1 {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .main {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+    margin-top: 3rem !important;
+  }
+  .main a .photo-img {
+    width: 10rem !important;
+    height: 10rem !important;
+  }
+}
+
+/** USER - RESPONSIVE DESIGN **/
+@media screen and (max-width: 940px) {
+  .header-user a img {
+    width: 25% !important;
+  }
+  .info-contact button {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+  .total-like {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-user .banner-layout .info-user {
+    padding-right: 0 !important;
+  }
+  .main {
+    row-gap: 0rem !important;
+    margin: auto !important;
+  }
+  .photo {
+    -ms-grid-columns: (1fr)[2] !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    grid-column-gap: 2rem !important;
+    margin-bottom: 10rem !important;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .banner .info-img img {
+    width: 10rem;
+    height: 10rem;
+  }
+  .filter {
+    display: none !important;
+  }
+  .photo {
+    margin-top: 2rem;
+  }
+  .photo {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+    grid-column-gap: 0 !important;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .header-user a img {
+    width: 35% !important;
+  }
+  .info-img img {
+    width: 8rem !important;
+    height: 8rem !important;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .banner {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .banner .info-user h1 {
+    font-size: 2rem !important;
+    text-align: center !important;
+  }
+  .banner .info-user .info-city {
+    margin-top: 0 !important;
+    text-align: center !important;
+  }
+  .banner .info-user .info-bio {
+    margin-top: 0.5rem !important;
+    text-align: center !important;
+  }
+  .banner .info-user nav ul {
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+    -ms-flex-wrap: wrap !important;
+        flex-wrap: wrap !important;
+  }
+  .banner .info-user nav ul li {
+    margin-bottom: 5px !important;
+  }
+  .banner .info-img {
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+  }
+  .banner .info-img img {
+    width: 8rem !important;
+    height: 8rem !important;
+  }
+}
+/*# sourceMappingURL=media.css.map */

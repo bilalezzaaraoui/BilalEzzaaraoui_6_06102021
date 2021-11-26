@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="dist/css/user.css" />
+    <link rel="stylesheet" href="dist/css/media.css" />
+    <title>User - FishEye</title>
+  </head>
+  <body>
+    <header class="header-user" role="En-tête">
+      <section aria-label="Lien vers la page d'acceuil">
+        <a href="index.html">
+          <img src="img/logo.png" class="logo" alt="Fisheye Home Page" />
+        </a>
+      </section>
+    </header>
+    <main class="main-user">
+      <section class="banner-layout" aria-label="Information du photographe">
+        <div class="banner">
+          <div class="info-user" aria-label="Texte statique">
+            <h1>Mimi Keel</h1>
+            <p class="info-city">London, UK</p>
+            <p class="info-bio">Voir le beau dans le quotidien</p>
+            <nav>
+              <ul>
+                <li><a href="#">#portrait</a></li>
+                <li><a href="#">#portrait</a></li>
+                <li><a href="#">#portrait</a></li>
+                <li><a href="#">#portrait</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="info-contact">
+            <button role="button" aria-label="Contact Me">Contacter-moi</button>
+          </div>
+          <div class="info-img">
+            <img
+              src="img/Photographers ID Photos/MimiKeel.jpg"
+              class="photo-img"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <section class="filter" aria-labelledby="filter-titre">
+        <p id="filter-titre" aria-labelledby="btn-choisi">Trier par</p>
+        <div class="dropdown">
+          <button
+            role="button"
+            class="dropbtn"
+            id="btn-choisi"
+            aria-haspopup="listbox"
+          >
+            Popularité <i class="fas fa-angle-up"></i>
+          </button>
+          <div class="dropdown-content" role="listbox">
+            <a href="#" role="option">Date</a>
+            <a href="#" role="option">Titre</a>
+          </div>
+        </div>
+      </section>
+      <section class="photo" aria-label="Portfolio de l'artiste">
+        <article class="card">
+          <a href="#" class="card-link">
+            <div class="card-img">
+              <img src="img/userWork/Mimi/Animals_Rainbow.jpg" alt="##" />
+            </div>
+            <div class="card-footer">
+              <p class="line">Animals Wild Horses in the plane</p>
+              <div class="card-footer-likes" aria-label="likes">
+                <p>142</p>
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="#" class="card-link">
+            <div class="card-img">
+              <img src="img/userWork/Mimi/Animals_Rainbow.jpg" alt="##" />
+            </div>
+            <div class="card-footer">
+              <p class="line">Animals Wild Horses in the plane</p>
+              <div class="card-footer-likes" aria-label="likes">
+                <p>142</p>
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="#" class="card-link">
+            <div class="card-img">
+              <img src="img/userWork/Mimi/Animals_Rainbow.jpg" alt="##" />
+            </div>
+            <div class="card-footer">
+              <p class="line">Animals Wild Horses in the plane</p>
+              <div class="card-footer-likes" aria-label="likes">
+                <p>142</p>
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="#" class="card-link">
+            <div class="card-img">
+              <img src="img/userWork/Mimi/Animals_Rainbow.jpg" alt="##" />
+            </div>
+            <div class="card-footer">
+              <p class="line">Animals Wild Horses in the plane</p>
+              <div class="card-footer-likes" aria-label="likes">
+                <p>142</p>
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+          </a>
+        </article>
+      </section>
+      <div class="total-like">
+        <span>284 876<i class="fas fa-heart"></i></span>
+        <span>400€ / jour</span>
+      </div>
+    </main>
+    <script src="js/main.js"></script>
+  </body>
+</html>

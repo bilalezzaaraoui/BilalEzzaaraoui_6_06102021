@@ -52,7 +52,7 @@ body {
         li {
           @include Btn;
 
-          a {
+          span {
             font-size: 1rem;
             color: $primaryFirst;
             font-weight: 700;

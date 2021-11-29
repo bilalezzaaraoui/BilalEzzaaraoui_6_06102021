@@ -1,6 +1,6 @@
-@import "variables";
-@import "mixin";
-@import "media";
+@import 'variables';
+@import 'mixin';
+@import 'media';
 
 * {
   margin: 0;
@@ -19,7 +19,7 @@ li {
 body {
   width: 100%;
   height: auto;
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
 
   .header-user {
     width: 90%;
@@ -81,7 +81,7 @@ body {
                 border-radius: 25px;
                 margin-right: 8px;
 
-                a {
+                span {
                   font-size: 0.9rem;
                   font-weight: 500;
                   color: $primaryFirst;
@@ -91,7 +91,7 @@ body {
                   background-color: $primaryFirst;
                   border: 1px solid $primaryFirst;
 
-                  a {
+                  span {
                     color: $secondary3;
                   }
                 }
@@ -201,7 +201,8 @@ body {
             height: 100%;
             border-radius: 5px;
             overflow: hidden;
-            img {
+            img,
+            video {
               width: 100%;
               height: 100%;
               object-fit: cover;

@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 a {
@@ -27,7 +27,7 @@ body .head {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto 1fr auto;
-  grid-template-columns: auto 1fr auto;
+      grid-template-columns: auto 1fr auto;
 }
 
 body .head .logo {
@@ -38,8 +38,8 @@ body .head .logo {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .head .logo img {
@@ -51,11 +51,11 @@ body .head nav {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .head nav ul {
@@ -63,10 +63,10 @@ body .head nav ul {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 body .head nav ul li {
@@ -87,7 +87,7 @@ body .head nav ul li:hover {
   border: 1px solid #901c1c;
 }
 
-body .head nav ul li:hover a {
+body .head nav ul li:hover span {
   color: #fafafa;
 }
 
@@ -96,8 +96,8 @@ body .head .title {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .head .title h1 {
@@ -111,8 +111,8 @@ body .main {
   margin: auto auto 4rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr) [3];
-  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 6rem;
   row-gap: 4rem;
 }
@@ -127,11 +127,11 @@ body .main .photo {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .main .photo a {
@@ -140,18 +140,18 @@ body .main .photo a {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .main .photo a .photo-img {
   width: 12rem;
   height: 12rem;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
 }
 
@@ -169,7 +169,6 @@ body .main .photo-city {
   font-size: 1.2rem;
   color: #901c1c;
   text-align: center;
-  background-color: url('../../img/Sample\ Photos\ /');
 }
 
 body .main .photo-bio {
@@ -192,14 +191,14 @@ body .main .photo-grid-tag ul {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 body .main .photo-grid-tag ul li {

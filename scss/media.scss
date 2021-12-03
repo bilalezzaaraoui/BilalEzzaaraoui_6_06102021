@@ -149,6 +149,13 @@
 }
 
 @media screen and (max-width: 680px) {
+  .overlay-modal {
+    .modal {
+      p {
+        font-size: 2rem !important;
+      }
+    }
+  }
   .banner {
     .info-img {
       img {
@@ -173,6 +180,17 @@
 }
 
 @media screen and (max-width: 590px) {
+  .overlay-modal {
+    .modal {
+      width: 70% !important;
+      .fa-times {
+        font-size: 2rem !important;
+      }
+      p {
+        font-size: 1.5rem !important;
+      }
+    }
+  }
   .header-user {
     a {
       img {
@@ -225,6 +243,19 @@
       img {
         width: 8rem !important;
         height: 8rem !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .overlay-modal {
+    .modal {
+      .fa-times {
+        font-size: 1rem !important;
+      }
+      p {
+        font-size: 1.3rem !important;
       }
     }
   }

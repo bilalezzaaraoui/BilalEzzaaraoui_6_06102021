@@ -63,7 +63,6 @@ class App {
         e.preventDefault();
         // Récuperation du tag = Step 2 Ok
         const tag = e.target.textContent.toLowerCase().trim().slice(1);
-        console.log(tag);
         this.filterPhotographer(tag);
       });
     });
@@ -72,25 +71,23 @@ class App {
   filterPhotographer(data) {
     // eslint-disable-next-line array-callback-return
     const filterArr = this.photographersList.filter((photographer) => {
-      if (photographer.tags.includes(data)) {
-        return photographer;
-      }
+      if (photographer.tags.includes(data)) return photographer;
     });
-    console.log(filterArr);
     this.displayPhotographer(filterArr);
   }
 
   sendUrl() {
     const allPhotographer = document.querySelectorAll('.photo');
-    console.log(allPhotographer);
     allPhotographer.forEach((el) => {
       el.addEventListener('click', (e) => {
         e.preventDefault();
         const index = el.querySelector('h2').textContent;
+        // eslint-disable-next-line array-callback-return
         this.photographersList.find((item) => {
           if (item.name === index) {
             console.log(item);
             const url = new URL(
+              // eslint-disable-next-line no-restricted-globals
               `${location.origin}/pages/user.html?id=${item.id}`
             );
             window.location = url;

@@ -34,19 +34,18 @@
       <section class="banner-layout" aria-label="Information du photographe">
         <div class="banner">
           <div class="info-user" aria-label="Texte statique">
-            <h1>Mimi Keel</h1>
-            <p class="info-city">London, UK</p>
-            <p class="info-bio">Voir le beau dans le quotidien</p>
+            <h1></h1>
+            <p class="info-city"></p>
+            <p class="info-bio"></p>
             <nav>
               <ul></ul>
             </nav>
           </div>
           <div class="info-contact">
-            <button role="button" aria-label="Contact Me">Contacter-moi</button>
+            <button role="button" aria-label="Contact Me" id="contact">Contacter-moi</button>
           </div>
           <div class="info-img">
-            <img
-              src="../img/Photographers ID Photos/MimiKeel.jpg"
+            <img         
               class="photo-img"
               alt=""
             />
@@ -54,27 +53,59 @@
         </div>
       </section>
       <section class="filter" aria-labelledby="filter-titre">
-        <p id="filter-titre" aria-labelledby="btn-choisi">Trier par</p>
+        <label id="filter-titre" aria-labelledby="btn-choisi">Trier par</label>
         <div class="dropdown">
-          <button
+          <span
             role="button"
             class="dropbtn"
             id="btn-choisi"
             aria-haspopup="listbox"
-          >
-            Popularité <i class="fas fa-angle-up"></i>
-          </button>
+            >Popularité &nbsp;<i class="fas fa-angle-down"></i>
+          </span>
           <div class="dropdown-content" role="listbox">
-            <a href="#" role="option">Date</a>
-            <a href="#" role="option">Titre</a>
+            <a href="#" role="option" class="option-order">Popularité</a>
+            <a href="#" role="option" class="option-order">Date</a>
+            <a href="#" role="option" class="option-order">Titre</a>
           </div>
         </div>
       </section>
       <section class="photo" aria-label="Portfolio de l'artiste"></section>
       <div class="total-like">
-        <span>284 876<i class="fas fa-heart"></i></span>
-        <span>400€ / jour</span>
+        <span class="like-counter">284 876<i class="fas fa-heart"></i></span>
+        <span class="price-counter">400€ / jour</span>
       </div>
     </main>
+    <section class="overlay-modal hidden" aria-label="Formulaire de contact">
+      <div class="modal">
+        <i class="fas fa-times"></i>
+        <p>Contactez-moi </br><span class="user-contact">Mimi Keel</span></p>
+        <form>
+          <label for="prenom">Prénom</label><br />
+          <input type="text" id="prenom" name="prenom" class="form" placeholder="Prénom..."/><br />
+          <label for="nom">Nom</label><br />
+          <input type="text" id="nom" name="nom" class="form" placeholder="Nom..."/><br />
+          <label for="email">Email</label><br />
+          <input type="text" id="email" name="email" class="form" placeholder="Email..."/><br />
+          <label for="message">Message</label><br />
+          <textarea id="message" 
+          name="message" rows="4" cols="50" 
+          class="form" 
+          placeholder="Votre texte..."></textarea>
+          <br /><br />
+          <input type="submit" value="Submit" id="submit"/>
+        </form>
+      </div>
+    </section>
+
+    <section class="slider-container">
+      <i class="fas fa-times fa-croix"></i>
+      <div class="slider-modal" role="image du slider">
+        <i class="fas fa-angle-left"></i>
+        <img src="" alt="image du photographe">
+        <video src="http://127.0.0.1:8080/img/Sample%20Photos%20/Marcel/Architecture_coverr_circle_empty_highway_in_buenos_aires_587740985637.mp4" controls autoplay class="video-player"></video>
+        <i class="fas fa-angle-right"></i>
+      </div>
+      <p>Exemple</p>
+    </section>
   </body>
 </html>

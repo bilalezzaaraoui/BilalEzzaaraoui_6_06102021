@@ -316,7 +316,6 @@ class User {
           name = name.replace('-', ' ');
         }
         const [source] = e.target.src.split('/').slice(-1);
-        console.log(source);
 
         data.find((obj) => {
           if (obj.image === source || obj.video === source) {

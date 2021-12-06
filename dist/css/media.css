@@ -103,8 +103,19 @@
 }
 
 @media screen and (max-width: 768px) {
+  .slider-container .fa-times {
+    top: 2.5rem !important;
+    right: 5rem !important;
+  }
+  .slider-container .slider-modal {
+    width: 80% !important;
+    max-height: 90% !important;
+  }
   .main-user .banner-layout .info-user {
     padding-right: 0 !important;
+  }
+  .main-user .photo {
+    margin-bottom: 12rem !important;
   }
   .main {
     row-gap: 0rem !important;
@@ -202,6 +213,17 @@
 }
 
 @media screen and (max-width: 470px) {
+  .slider-container .fa-times {
+    top: 10rem !important;
+    right: 3rem !important;
+  }
+  .slider-container .slider-modal {
+    width: 90% !important;
+    max-height: 95% !important;
+  }
+  .header-user a img {
+    width: 45% !important;
+  }
   .head div h1 {
     text-align: right;
   }

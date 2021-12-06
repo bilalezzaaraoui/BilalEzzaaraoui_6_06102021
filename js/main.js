@@ -85,12 +85,18 @@ class App {
         // eslint-disable-next-line array-callback-return
         this.photographersList.find((item) => {
           if (item.name === index) {
-            // console.log(item, item.name, index);
+            // Live server
             const url = new URL(
               // eslint-disable-next-line no-restricted-globals
-              `${location.href}/pages/user.html?id=${item.id}`
+              `${location.origin}/pages/user.html?id=${item.id}`
             );
-            // console.log(url, window.location);
+
+            // Github
+            // const url = new URL(
+            //   // eslint-disable-next-line no-restricted-globals
+            //   `${location.href}/pages/user.html?id=${item.id}`
+            // );
+
             window.location = url;
           }
         });

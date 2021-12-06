@@ -129,11 +129,26 @@
 
 @media screen and (max-width: 768px) {
   // User - Media Queries
+  .slider-container {
+    .fa-times {
+      top: 2.5rem !important;
+      right: 5rem !important;
+    }
+
+    .slider-modal {
+      width: 80% !important;
+      max-height: 90% !important;
+    }
+  }
   .main-user {
     .banner-layout {
       .info-user {
         padding-right: 0 !important;
       }
+    }
+
+    .photo {
+      margin-bottom: 12rem !important;
     }
   }
   // Index
@@ -249,6 +264,27 @@
 }
 
 @media screen and (max-width: 470px) {
+  // User
+  .slider-container {
+    .fa-times {
+      top: 10rem !important;
+      right: 3rem !important;
+    }
+    .slider-modal {
+      width: 90% !important;
+      max-height: 95% !important;
+    }
+  }
+
+  .header-user {
+    a {
+      img {
+        width: 45% !important;
+      }
+    }
+  }
+
+  // Main
   .head {
     div {
       h1 {

@@ -114,7 +114,7 @@
     -ms-grid-columns: (1fr)[2] !important;
         grid-template-columns: repeat(2, 1fr) !important;
     grid-column-gap: 2rem !important;
-    margin-bottom: 10rem !important;
+    margin-bottom: 6rem !important;
   }
 }
 
@@ -202,6 +202,9 @@
 }
 
 @media screen and (max-width: 470px) {
+  .head div h1 {
+    text-align: right;
+  }
   .overlay-modal .modal .fa-times {
     font-size: 1rem !important;
   }

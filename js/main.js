@@ -85,13 +85,13 @@ class App {
         // eslint-disable-next-line array-callback-return
         this.photographersList.find((item) => {
           if (item.name === index) {
-            console.log(item, item.name, index);
+            // console.log(item, item.name, index);
             const url = new URL(
               // eslint-disable-next-line no-restricted-globals
-              `${location.origin}/pages/user.html?id=${item.id}`
+              `${location.href}/pages/user.html?id=${item.id}`
             );
-            console.log(url, window.location);
-            // window.location = url;
+            // console.log(url, window.location);
+            window.location = url;
           }
         });
       });

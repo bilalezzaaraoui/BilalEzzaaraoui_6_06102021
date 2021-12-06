@@ -48,7 +48,7 @@ class User {
       const { photographers, media } = response;
 
       // eslint-disable-next-line no-restricted-globals
-      logo.href = location.origin;
+      logo.href = location.href;
       // eslint-disable-next-line no-restricted-globals
       console.log(location);
 

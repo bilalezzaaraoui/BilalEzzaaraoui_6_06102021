@@ -244,6 +244,7 @@ class User {
     allOption.forEach((item) => {
       // Event listener sur tous les filtres
       item.addEventListener('click', (e) => {
+        console.log(e.target);
         e.preventDefault();
         function capitalizeFirstLetter(string) {
           return string.charAt(0).toUpperCase() + string.slice(1);
@@ -269,15 +270,15 @@ class User {
               const date = function (a, b) {
                 return new Date(b.date).valueOf() - new Date(a.date).valueOf();
               };
-              // Test de date
-              data.forEach((el) => {
-                console.log(el.title, el.date);
-              });
-              console.log('--------------------------');
-              const coke = data.sort(date);
-              coke.forEach((ok) => {
-                console.log(ok.title, ok.date);
-              });
+              // // Test de date
+              // data.forEach((el) => {
+              //   console.log(el.title, el.date);
+              // });
+              // console.log('--------------------------');
+              // const coke = data.sort(date);
+              // coke.forEach((ok) => {
+              //   console.log(ok.title, ok.date);
+              // });
 
               this.updatePortofolio(data.sort(date), user);
             }
@@ -310,15 +311,18 @@ class User {
     allWork.forEach((item) => {
       item.addEventListener('click', (e) => {
         e.preventDefault();
-        const name = user.name.split(' ')[0];
+        let name = user.name.split(' ')[0];
+        if (name.includes('-')) {
+          name = name.replace('-', ' ');
+        }
         const [source] = e.target.src.split('/').slice(-1);
-        console.log(name, source);
+        console.log(source);
 
         data.find((obj) => {
           if (obj.image === source || obj.video === source) {
             // Check si vidéo ou image
             const checkVideo = function (dataObj, username) {
-              console.log(dataObj.image, dataObj.video);
+              // console.log(dataObj.image, dataObj.video);
               if (dataObj.video !== undefined) {
                 videoPlayer.style.display = 'flex';
                 videoPlayer.src = `../img/Sample Photos /${username}/${dataObj.video}`;
@@ -336,8 +340,6 @@ class User {
               } else {
                 sliderContainer.querySelector('img').style.display = 'none';
               }
-              // videoPlayer.style.display = 'none';
-              // console.log(videoPlayer);
             };
             // Ouverture de la modal
             sliderContainer.style.display = 'flex';

@@ -48,9 +48,8 @@ class User {
       const { photographers, media } = response;
 
       // eslint-disable-next-line no-restricted-globals
-      logo.href = location.href;
+      logo.href = `${location.origin}/BilalEzzaaraoui_6_06102021`;
       // eslint-disable-next-line no-restricted-globals
-      console.log(location);
 
       // Récupération de l'id de l'url
 

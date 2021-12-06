@@ -1,5 +1,7 @@
 'use strict';
 
+const logo = document.querySelector('.logo');
+
 class App {
   photographersList = [];
 
@@ -16,8 +18,11 @@ class App {
       this.photographersList = photographers.map(
         (item) => new Photographer(item)
       );
-
       this.displayPhotographer(photographers);
+      // eslint-disable-next-line no-restricted-globals
+      logo.href = location.href;
+      // eslint-disable-next-line no-restricted-globals
+      console.log(location);
     } catch (err) {
       console.error(err.message);
     }

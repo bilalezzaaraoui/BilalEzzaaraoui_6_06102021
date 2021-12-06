@@ -1,6 +1,7 @@
 // Element du DOM
 
-// const { check } = require('prettier');
+// Logo
+const logo = document.querySelector('.logo');
 
 // Information et portfolio de l'utilisateur
 const allInfo = document.querySelector('.info-user');
@@ -45,6 +46,11 @@ class User {
 
       const response = await request.json();
       const { photographers, media } = response;
+
+      // eslint-disable-next-line no-restricted-globals
+      logo.href = location.origin;
+      // eslint-disable-next-line no-restricted-globals
+      console.log(location);
 
       // Récupération de l'id de l'url
 

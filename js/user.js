@@ -342,6 +342,7 @@ class User {
           'img'
         ).src = `../img/Sample Photos /${username}/${dataObj.image}`;
         sliderContainer.querySelector('p').textContent = dataObj.title;
+        sliderContainer.querySelector('img').alt = dataObj.title;
       } else {
         sliderContainer.querySelector('img').style.display = 'none';
       }

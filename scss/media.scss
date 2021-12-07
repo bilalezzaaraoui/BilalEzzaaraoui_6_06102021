@@ -267,12 +267,22 @@
   // User
   .slider-container {
     .fa-times {
-      top: 10rem !important;
-      right: 3rem !important;
+      top: 3rem !important;
+      right: 0.5rem !important;
     }
     .slider-modal {
       width: 90% !important;
       max-height: 95% !important;
+    }
+  }
+
+  .banner-layout {
+    .banner {
+      .info-contact {
+        button {
+          padding: 1rem 1rem !important;
+        }
+      }
     }
   }
 

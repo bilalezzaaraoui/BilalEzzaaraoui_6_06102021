@@ -375,6 +375,12 @@ class User {
                 sliderContainer.style.display = 'none';
               });
 
+            document.addEventListener('keyup', (e) => {
+              if (e.key === 'Escape') {
+                sliderContainer.style.display = 'none';
+              }
+            });
+
             let index = data.indexOf(obj);
 
             const rightClick = function () {
@@ -414,7 +420,7 @@ class User {
       });
     });
 
-    // Ecoute du focus = Non
+    // Ecoute du focus = Bon
     work.forEach((el) => {
       el.addEventListener('focus', (e) => {
         let [source] = e.target.src.split('/').slice(-1);

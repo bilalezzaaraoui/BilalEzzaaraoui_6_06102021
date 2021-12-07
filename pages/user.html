@@ -42,7 +42,7 @@
             </nav>
           </div>
           <div class="info-contact">
-            <button role="button" aria-label="Contact Me" id="contact">Contacter-moi</button>
+            <button role="button" aria-label="Contact Me" id="contact">Contactez-moi</button>
           </div>
           <div class="info-img">
             <img         
@@ -52,17 +52,20 @@
           </div>
         </div>
       </section>
-      <section class="filter" aria-labelledby="filter-titre">
-        <label id="filter-titre" aria-labelledby="btn-choisi">Trier par</label>
-        <div class="dropdown" tabindex="0">
+      <section class="filter" aria-label="Section filtre du portfolio">
+        <label id="filter-titre">Trier par</label>
+        <div class="dropdown">
           <span
             role="button"
             class="dropbtn"
             id="btn-choisi"
             aria-haspopup="listbox"
+            aria-expanded="true"
+            aria-labelledby="filter-titre"
+            tabindex="0"  
             >Popularité &nbsp;<em class="fas fa-angle-down"></em>
           </span>
-          <div class="dropdown-content" role="listbox" tabindex="0">
+          <div class="dropdown-content" role="listbox">
             <a href="#" role="option" class="option-order" tabindex="0" role="button">Popularité</a>
             <a href="#" role="option" class="option-order" tabindex="0" role="button">Date</a>
             <a href="#" role="option" class="option-order" tabindex="0" role="button">Titre</a>

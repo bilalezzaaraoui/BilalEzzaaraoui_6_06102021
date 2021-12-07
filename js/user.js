@@ -80,6 +80,7 @@ class User {
     cityInfo.textContent = `${data.city}, ${data.country}`;
     bioInfo.textContent = data.tagline;
     imgInfo.src = `../img/Photographers ID Photos/${data.portrait}`;
+    imgInfo.alt = `${data.name}`;
 
     let html = '';
     data.tags.forEach((element) => {
@@ -113,9 +114,9 @@ class User {
             <div class="card-img">
             <video controls="controls" src="../img/Sample Photos /${name}/${item.video}" tabindex="0" role="video" class="work"></video>
             </div>
-            <div class="card-footer">
+            <div class="card-footer" aria-label="${item.title}, closeup view">
               <p class="line" tabindex="0">${item.title}</p>
-              <div class="card-footer-likes" aria-label="Nombre de likes ${item.likes}" tabindex="0">
+              <div class="card-footer-likes" aria-label="likes" tabindex="0">
                 <p>${item.likes}</p>
                 <em class="fas fa-heart"></em>
               </div>
@@ -125,12 +126,12 @@ class User {
       } else {
         portofolio += `<article class="card" aria-label="Projet ${item.title}">
           <a class="card-link" >
-            <div class="card-img">
+            <div class="card-img" aria-label="${item.title}, closeup view">
               <img src="../img/Sample Photos /${name}/${item.image}" alt="Photographie ${item.title}" tabindex="0" class="work"/>
             </div>
             <div class="card-footer">
               <p class="line" tabindex="0">${item.title}</p>
-              <div class="card-footer-likes" aria-label="Nombre de likes ${item.likes}" tabindex="0">
+              <div class="card-footer-likes" aria-label="likes" tabindex="0">
                 <p>${item.likes}</p>
                 <em class="fas fa-heart"></em>
               </div>

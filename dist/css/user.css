@@ -418,6 +418,16 @@ body .main-user .filter .dropdown {
   letter-spacing: 1px;
 }
 
+body .main-user .filter .dropdown:focus .dropdown-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .main-user .filter .dropdown:not(:focus) .dropdown-content {
+  display: none;
+}
+
 body .main-user .filter .dropdown-content {
   display: none;
   -webkit-box-orient: vertical;

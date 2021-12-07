@@ -17,6 +17,7 @@
     "strict": "off",
     "eqeqeq": "off",
     "consistent-return": "off",
-    "array-callback-return": "off"
+    "array-callback-return": "off",
+    "no-shadow": "off"
   }
 }

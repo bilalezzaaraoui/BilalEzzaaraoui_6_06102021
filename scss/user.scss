@@ -157,6 +157,18 @@ body {
         border-radius: 4px;
         letter-spacing: 1px;
 
+        &:focus {
+          .dropdown-content {
+            display: flex;
+          }
+        }
+
+        &:not(:focus) {
+          .dropdown-content {
+            display: none;
+          }
+        }
+
         &-content {
           display: none;
           flex-direction: column;

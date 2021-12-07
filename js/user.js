@@ -83,7 +83,7 @@ class User {
 
     let html = '';
     data.tags.forEach((element) => {
-      html += `<li><span>#${element}</span></li>
+      html += `<li tabindex="0"><span>#${element}</span></li>
         `;
     });
     list.innerHTML = html;
@@ -108,14 +108,14 @@ class User {
     let portofolio = '';
     data.forEach((item) => {
       if (item.image == undefined) {
-        portofolio += `<article class="card">
+        portofolio += `<article class="card" aria-label="Projet ${item.title}" >
           <a class="card-link">
             <div class="card-img">
-            <video controls="controls" src="../img/Sample Photos /${name}/${item.video}" role="button"></video>
+            <video controls="controls" src="../img/Sample Photos /${name}/${item.video}" tabindex="0" role="video" class="work"></video>
             </div>
             <div class="card-footer">
-              <p class="line">${item.title}</p>
-              <div class="card-footer-likes" aria-label="likes">
+              <p class="line" tabindex="0">${item.title}</p>
+              <div class="card-footer-likes" aria-label="Nombre de likes ${item.likes}" tabindex="0">
                 <p>${item.likes}</p>
                 <em class="fas fa-heart"></em>
               </div>
@@ -124,13 +124,13 @@ class User {
         </article>`;
       } else {
         portofolio += `<article class="card" aria-label="Projet ${item.title}">
-          <a class="card-link">
+          <a class="card-link" >
             <div class="card-img">
-              <img src="../img/Sample Photos /${name}/${item.image}" alt="Photographie ${item.title}" />
+              <img src="../img/Sample Photos /${name}/${item.image}" alt="Photographie ${item.title}" tabindex="0" class="work"/>
             </div>
             <div class="card-footer">
-              <p class="line">${item.title}</p>
-              <div class="card-footer-likes" aria-label="Nombre de likes ${item.likes}">
+              <p class="line" tabindex="0">${item.title}</p>
+              <div class="card-footer-likes" aria-label="Nombre de likes ${item.likes}" tabindex="0">
                 <p>${item.likes}</p>
                 <em class="fas fa-heart"></em>
               </div>
@@ -187,6 +187,12 @@ class User {
 
         closeBtn.addEventListener('click', () => {
           overlay.style.display = 'none';
+        });
+
+        document.addEventListener('keyup', (e) => {
+          if (e.key === 'Escape') {
+            overlay.style.display = 'none';
+          }
         });
 
         submitBtn.addEventListener('click', (e) => {
@@ -312,15 +318,41 @@ class User {
 
   slider(data, user) {
     const allWork = document.querySelectorAll('.card');
+    const work = document.querySelectorAll('.work');
 
+    let name = user.name.split(' ')[0];
+    if (name.includes('-')) {
+      name = name.replace('-', ' ');
+    }
+
+    const checkVideo = function (dataObj, username) {
+      // console.log(dataObj.image, dataObj.video);
+      if (dataObj.video !== undefined) {
+        videoPlayer.style.display = 'flex';
+        videoPlayer.src = `../img/Sample Photos /${username}/${dataObj.video}`;
+        sliderContainer.querySelector('p').textContent = dataObj.title;
+      } else {
+        videoPlayer.style.display = 'none';
+      }
+
+      if (dataObj.image !== undefined) {
+        sliderContainer.querySelector('img').style.display = 'flex';
+        sliderContainer.querySelector(
+          'img'
+        ).src = `../img/Sample Photos /${username}/${dataObj.image}`;
+        sliderContainer.querySelector('p').textContent = dataObj.title;
+      } else {
+        sliderContainer.querySelector('img').style.display = 'none';
+      }
+    };
+
+    // Ecoute du clique = Bon
     allWork.forEach((item) => {
       item.addEventListener('click', (e) => {
         e.preventDefault();
-        let name = user.name.split(' ')[0];
-        if (name.includes('-')) {
-          name = name.replace('-', ' ');
-        }
+
         let [source] = e.target.src.split('/').slice(-1);
+        console.log(source);
 
         if (source.includes('%20')) {
           source = source.replace('%20', ' ');
@@ -332,27 +364,6 @@ class User {
             // Check si vidéo ou image
             // console.log(obj.image, source);
             // console.log(obj.video, source);
-
-            const checkVideo = function (dataObj, username) {
-              // console.log(dataObj.image, dataObj.video);
-              if (dataObj.video !== undefined) {
-                videoPlayer.style.display = 'flex';
-                videoPlayer.src = `../img/Sample Photos /${username}/${dataObj.video}`;
-                sliderContainer.querySelector('p').textContent = dataObj.title;
-              } else {
-                videoPlayer.style.display = 'none';
-              }
-
-              if (dataObj.image !== undefined) {
-                sliderContainer.querySelector('img').style.display = 'flex';
-                sliderContainer.querySelector(
-                  'img'
-                ).src = `../img/Sample Photos /${username}/${dataObj.image}`;
-                sliderContainer.querySelector('p').textContent = dataObj.title;
-              } else {
-                sliderContainer.querySelector('img').style.display = 'none';
-              }
-            };
 
             // Ouverture de la modal
             sliderContainer.style.display = 'flex';
@@ -389,16 +400,87 @@ class User {
 
             // eslint-disable-next-line no-inner-declarations
             function checkKey(e) {
-              // e = e || window.event;
-              if (e.keyCode == '37') {
+              if (e.key == 'ArrowLeft') {
                 // left arrow
                 leftClick();
-              } else if (e.keyCode == '39') {
+              } else if (e.key == 'ArrowRight') {
                 // right arrow
                 rightClick();
               }
             }
             document.onkeydown = checkKey;
+          }
+        });
+      });
+    });
+
+    // Ecoute du focus = Non
+    work.forEach((el) => {
+      el.addEventListener('focus', (e) => {
+        let [source] = e.target.src.split('/').slice(-1);
+        console.log(source);
+
+        if (source.includes('%20')) {
+          source = source.replace('%20', ' ');
+        }
+
+        el.addEventListener('keyup', (e) => {
+          if (e.keyCode === 13) {
+            data.find((obj) => {
+              if (obj.image === source || obj.video === source) {
+                // Ouverture de la modal
+                sliderContainer.style.display = 'flex';
+                checkVideo(obj, name);
+
+                document
+                  .querySelector('.fa-croix')
+                  .addEventListener('click', () => {
+                    sliderContainer.style.display = 'none';
+                  });
+
+                document.addEventListener('keyup', (e) => {
+                  if (e.key === 'Escape') {
+                    sliderContainer.style.display = 'none';
+                  }
+                });
+
+                let index = data.indexOf(obj);
+
+                const rightClick = function () {
+                  // eslint-disable-next-line no-plusplus
+                  index++;
+                  if (index >= data.length) {
+                    index = 0;
+                  }
+                  checkVideo(data[index], name);
+                };
+
+                const leftClick = function () {
+                  if (index <= 0) {
+                    index = data.length;
+                  }
+                  // eslint-disable-next-line no-plusplus
+                  index--;
+                  checkVideo(data[index], name);
+                };
+
+                rightArrow.addEventListener('click', rightClick);
+                leftArrow.addEventListener('click', leftClick);
+
+                // eslint-disable-next-line no-inner-declarations
+                function checkKey(e) {
+                  // e = e || window.event;
+                  if (e.key == 'ArrowLeft') {
+                    // left arrow
+                    leftClick();
+                  } else if (e.key == 'ArrowRight') {
+                    // right arrow
+                    rightClick();
+                  }
+                }
+                document.onkeydown = checkKey;
+              }
+            });
           }
         });
       });

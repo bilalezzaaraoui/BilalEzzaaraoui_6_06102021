@@ -99,7 +99,7 @@ class App {
             // Github
             const url = new URL(
               // eslint-disable-next-line no-restricted-globals
-              `${location.href}/pages/user.html?id=${item.id}`
+              `${location.href}pages/user.html?id=${item.id}`
             );
 
             window.location = url;

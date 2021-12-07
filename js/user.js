@@ -320,11 +320,19 @@ class User {
         if (name.includes('-')) {
           name = name.replace('-', ' ');
         }
-        const [source] = e.target.src.split('/').slice(-1);
+        let [source] = e.target.src.split('/').slice(-1);
+
+        if (source.includes('%20')) {
+          source = source.replace('%20', ' ');
+          console.log(source);
+        }
 
         data.find((obj) => {
           if (obj.image === source || obj.video === source) {
             // Check si vidéo ou image
+            // console.log(obj.image, source);
+            // console.log(obj.video, source);
+
             const checkVideo = function (dataObj, username) {
               // console.log(dataObj.image, dataObj.video);
               if (dataObj.video !== undefined) {
@@ -345,6 +353,7 @@ class User {
                 sliderContainer.querySelector('img').style.display = 'none';
               }
             };
+
             // Ouverture de la modal
             sliderContainer.style.display = 'flex';
             checkVideo(obj, name);
@@ -377,6 +386,19 @@ class User {
 
             rightArrow.addEventListener('click', rightClick);
             leftArrow.addEventListener('click', leftClick);
+
+            // eslint-disable-next-line no-inner-declarations
+            function checkKey(e) {
+              // e = e || window.event;
+              if (e.keyCode == '37') {
+                // left arrow
+                leftClick();
+              } else if (e.keyCode == '39') {
+                // right arrow
+                rightClick();
+              }
+            }
+            document.onkeydown = checkKey;
           }
         });
       });

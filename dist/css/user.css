@@ -103,8 +103,19 @@
 }
 
 @media screen and (max-width: 768px) {
+  .slider-container .fa-times {
+    top: 2.5rem !important;
+    right: 5rem !important;
+  }
+  .slider-container .slider-modal {
+    width: 80% !important;
+    max-height: 90% !important;
+  }
   .main-user .banner-layout .info-user {
     padding-right: 0 !important;
+  }
+  .main-user .photo {
+    margin-bottom: 12rem !important;
   }
   .main {
     row-gap: 0rem !important;
@@ -114,7 +125,7 @@
     -ms-grid-columns: (1fr)[2] !important;
         grid-template-columns: repeat(2, 1fr) !important;
     grid-column-gap: 2rem !important;
-    margin-bottom: 10rem !important;
+    margin-bottom: 6rem !important;
   }
 }
 
@@ -202,6 +213,20 @@
 }
 
 @media screen and (max-width: 470px) {
+  .slider-container .fa-times {
+    top: 10rem !important;
+    right: 3rem !important;
+  }
+  .slider-container .slider-modal {
+    width: 90% !important;
+    max-height: 95% !important;
+  }
+  .header-user a img {
+    width: 45% !important;
+  }
+  .head div h1 {
+    text-align: right;
+  }
   .overlay-modal .modal .fa-times {
     font-size: 1rem !important;
   }
@@ -498,7 +523,7 @@ body .main-user .photo .card .card-link .card-footer-likes p {
   top: 4px;
 }
 
-body .main-user .photo .card .card-link .card-footer-likes i {
+body .main-user .photo .card .card-link .card-footer-likes em {
   position: relative;
   top: 6px;
   color: #901c1c;
@@ -524,7 +549,7 @@ body .main-user .total-like span:first-child {
   font-size: 1.2rem;
 }
 
-body .main-user .total-like span:first-child i {
+body .main-user .total-like span:first-child em {
   margin-left: 0.4rem;
 }
 
@@ -656,7 +681,7 @@ body .slider-container .slider-modal {
           align-items: center;
 }
 
-body .slider-container .slider-modal i {
+body .slider-container .slider-modal em {
   font-size: 2.5rem;
   color: #901c1c;
 }

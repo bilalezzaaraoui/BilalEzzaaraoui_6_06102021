@@ -241,7 +241,7 @@ body {
                 top: 4px;
               }
 
-              i {
+              em {
                 position: relative;
                 top: 6px;
                 color: $primaryFirst;
@@ -267,7 +267,7 @@ body {
       span:first-child {
         margin-right: 2rem;
         font-size: 1.2rem;
-        i {
+        em {
           margin-left: 0.4rem;
         }
       }
@@ -384,7 +384,7 @@ body {
       justify-content: space-between;
       align-items: center;
 
-      i {
+      em {
         font-size: 2.5rem;
         color: $primaryFirst;
       }

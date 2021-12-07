@@ -117,22 +117,22 @@ class User {
               <p class="line">${item.title}</p>
               <div class="card-footer-likes" aria-label="likes">
                 <p>${item.likes}</p>
-                <i class="fas fa-heart"></i>
+                <em class="fas fa-heart"></em>
               </div>
             </div>
           </a>
         </article>`;
       } else {
-        portofolio += `<article class="card">
+        portofolio += `<article class="card" aria-label="Projet ${item.title}">
           <a class="card-link">
             <div class="card-img">
-              <img src="../img/Sample Photos /${name}/${item.image}" alt="##" />
+              <img src="../img/Sample Photos /${name}/${item.image}" alt="Photographie ${item.title}" />
             </div>
             <div class="card-footer">
               <p class="line">${item.title}</p>
-              <div class="card-footer-likes" aria-label="likes">
+              <div class="card-footer-likes" aria-label="Nombre de likes ${item.likes}">
                 <p>${item.likes}</p>
-                <i class="fas fa-heart"></i>
+                <em class="fas fa-heart"></em>
               </div>
             </div>
           </a>

@@ -54,22 +54,11 @@
       </section>
       <section class="filter" aria-label="Section filtre du portfolio">
         <label id="filter-titre">Trier par</label>
-        <div class="dropdown" tabindex="0"  >
-          <span
-            role="button"
-            class="dropbtn"
-            id="btn-choisi"
-            aria-haspopup="listbox"
-            aria-expanded="true"
-            aria-labelledby="filter-titre"
-            >Popularité &nbsp;<em class="fas fa-angle-down"></em>
-          </span>
-          <div class="dropdown-content" role="listbox">
-            <a href="#" role="option" class="option-order" tabindex="0" role="button">Popularité</a>
-            <a href="#" role="option" class="option-order" tabindex="0" role="button">Date</a>
-            <a href="#" role="option" class="option-order" tabindex="0" role="button">Titre</a>
-          </div>
-        </div>
+          <select class="dropdown-content" tabindex="0">
+            <option class="option-order" value="popularité">Popularité</option>
+            <option class="option-order" value="date">Date</option>
+            <option class="option-order" value="titre">Titre</option>
+          </select>
       </section>
       <section class="photo" aria-label="Portfolio de l'artiste"></section>
       <div class="total-like" tabindex="0">

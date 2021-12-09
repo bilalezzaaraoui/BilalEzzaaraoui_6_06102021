@@ -25,8 +25,9 @@ const email = document.getElementById('email');
 const message = document.getElementById('message');
 const allForm = document.querySelectorAll('.form');
 // Ordre de triage
-const allOption = document.querySelectorAll('.option-order');
-const optionSelected = document.getElementById('btn-choisi');
+// const allOption = document.querySelectorAll('.option-order');
+// const optionSelected = document.getElementById('btn-choisi');
+const option = document.querySelector('.dropdown-content');
 // Slider
 const sliderContainer = document.querySelector('.slider-container');
 const rightArrow = document.querySelector('.fa-angle-right');
@@ -247,73 +248,52 @@ class User {
   }
 
   sortPhotographers(data, user) {
-    // eslint-disable-next-line prefer-const
-    let arr = [];
-    allOption.forEach((item) => {
-      arr.push(item.textContent);
-    });
+    // Check quel option est choisi
+    console.log(option);
+    option.addEventListener('change', (e) => {
+      const result = option.options[option.selectedIndex].value;
 
-    allOption.forEach((item) => {
-      // Event listener sur tous les filtres
-      item.addEventListener('click', (e) => {
-        console.log(e.target);
-        e.preventDefault();
-        function capitalizeFirstLetter(string) {
-          return string.charAt(0).toUpperCase() + string.slice(1);
-        }
-        // Récupération du textContent du filtre
-        const target = capitalizeFirstLetter(e.target.textContent);
+      // Trier par popularité
+      if (result === 'popularité') {
+        const popularity = function (a, b) {
+          // eslint-disable-next-line radix
+          return parseInt(b.likes) - parseInt(a.likes);
+        };
+        this.updatePortofolio(data.sort(popularity), user);
+      }
 
-        allOption.forEach((element) => {
-          if (target === element.textContent) {
-            // eslint-disable-next-line no-param-reassign
-            element.style.display = 'none';
-            optionSelected.innerHTML = `${target} &nbsp;<i class="fas fa-angle-down">`;
+      // Trier par date
+      if (result === 'date') {
+        const date = function (a, b) {
+          return new Date(b.date).valueOf() - new Date(a.date).valueOf();
+        };
+        // // Test de date
+        // data.forEach((el) => {
+        //   console.log(el.title, el.date);
+        // });
+        // console.log('--------------------------');
+        // const coke = data.sort(date);
+        // coke.forEach((ok) => {
+        //   console.log(ok.title, ok.date);
+        // });
 
-            if (element.textContent === 'Popularité') {
-              const popularity = function (a, b) {
-                // eslint-disable-next-line radix
-                return parseInt(b.likes) - parseInt(a.likes);
-              };
-              this.updatePortofolio(data.sort(popularity), user);
-            }
+        this.updatePortofolio(data.sort(date), user);
+      }
 
-            if (element.textContent === 'Date') {
-              const date = function (a, b) {
-                return new Date(b.date).valueOf() - new Date(a.date).valueOf();
-              };
-              // // Test de date
-              // data.forEach((el) => {
-              //   console.log(el.title, el.date);
-              // });
-              // console.log('--------------------------');
-              // const coke = data.sort(date);
-              // coke.forEach((ok) => {
-              //   console.log(ok.title, ok.date);
-              // });
-
-              this.updatePortofolio(data.sort(date), user);
-            }
-
-            if (element.textContent === 'Titre') {
-              const titre = function (a, b) {
-                if (a.title > b.title) {
-                  return 1;
-                  // eslint-disable-next-line no-else-return
-                } else if (b.title > a.title) {
-                  return -1;
-                } else {
-                  return 0;
-                }
-              };
-              this.updatePortofolio(data.sort(titre), user);
-            }
+      // Trier par titre
+      if (result === 'titre') {
+        const titre = function (a, b) {
+          if (a.title > b.title) {
+            return 1;
+            // eslint-disable-next-line no-else-return
+          } else if (b.title > a.title) {
+            return -1;
           } else {
-            // eslint-disable-next-line no-param-reassign
-            element.style.display = 'block';
+            return 0;
           }
-        });
-      });
+        };
+        this.updatePortofolio(data.sort(titre), user);
+      }
     });
   }
 
@@ -426,7 +406,6 @@ class User {
     work.forEach((el) => {
       el.addEventListener('focus', (e) => {
         let [source] = e.target.src.split('/').slice(-1);
-        console.log(source);
 
         if (source.includes('%20')) {
           source = source.replace('%20', ' ');

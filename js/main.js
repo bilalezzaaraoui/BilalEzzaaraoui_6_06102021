@@ -22,7 +22,6 @@ class App {
       // eslint-disable-next-line no-restricted-globals
       logo.href = location.href;
       // eslint-disable-next-line no-restricted-globals
-      console.log(location);
     } catch (err) {
       console.error(err.message);
     }
@@ -62,13 +61,25 @@ class App {
 
   clickPhotographer() {
     const photographers = document.querySelectorAll('.freelancer');
-    // Récupération du tags = Step 1 Ok
+    // Click
     photographers.forEach((item) => {
       item.addEventListener('click', (e) => {
         e.preventDefault();
-        // Récuperation du tag = Step 2 Ok
         const tag = e.target.textContent.toLowerCase().trim().slice(1);
         this.filterPhotographer(tag);
+      });
+    });
+
+    // Focus
+    photographers.forEach((item) => {
+      item.addEventListener('focus', (e) => {
+        const tag = e.target.textContent.toLowerCase().trim().slice(1);
+        // console.log(tag);
+        document.addEventListener('keyup', (e) => {
+          if (e.key === 'Enter') {
+            this.filterPhotographer(tag);
+          }
+        });
       });
     });
   }

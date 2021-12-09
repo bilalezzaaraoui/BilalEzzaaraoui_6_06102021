@@ -249,7 +249,6 @@ class User {
 
   sortPhotographers(data, user) {
     // Check quel option est choisi
-    console.log(option);
     option.addEventListener('change', (e) => {
       const result = option.options[option.selectedIndex].value;
 

@@ -1,5 +1,4 @@
 // Element du DOM
-
 // Logo
 const logo = document.querySelector('.logo');
 
@@ -25,8 +24,6 @@ const email = document.getElementById('email');
 const message = document.getElementById('message');
 const allForm = document.querySelectorAll('.form');
 // Ordre de triage
-// const allOption = document.querySelectorAll('.option-order');
-// const optionSelected = document.getElementById('btn-choisi');
 const option = document.querySelector('.dropdown-content');
 // Slider
 const sliderContainer = document.querySelector('.slider-container');
@@ -50,9 +47,6 @@ class User {
 
       // eslint-disable-next-line no-restricted-globals
       logo.href = `${location.origin}/BilalEzzaaraoui_6_06102021`;
-      // eslint-disable-next-line no-restricted-globals
-
-      // Récupération de l'id de l'url
 
       const params = new URLSearchParams(window.location.search);
       const id = params.get('id');
@@ -146,7 +140,6 @@ class User {
   }
 
   counterLikes(data) {
-    // Possibilité d'incrémenter un like
     const section = document.querySelector('.photo');
     const likesBtn = section.querySelectorAll('.fa-heart');
 
@@ -248,11 +241,9 @@ class User {
   }
 
   sortPhotographers(data, user) {
-    // Check quel option est choisi
     option.addEventListener('change', (e) => {
       const result = option.options[option.selectedIndex].value;
 
-      // Trier par popularité
       if (result === 'popularité') {
         const popularity = function (a, b) {
           // eslint-disable-next-line radix
@@ -261,25 +252,14 @@ class User {
         this.updatePortofolio(data.sort(popularity), user);
       }
 
-      // Trier par date
       if (result === 'date') {
         const date = function (a, b) {
           return new Date(b.date).valueOf() - new Date(a.date).valueOf();
         };
-        // // Test de date
-        // data.forEach((el) => {
-        //   console.log(el.title, el.date);
-        // });
-        // console.log('--------------------------');
-        // const coke = data.sort(date);
-        // coke.forEach((ok) => {
-        //   console.log(ok.title, ok.date);
-        // });
 
         this.updatePortofolio(data.sort(date), user);
       }
 
-      // Trier par titre
       if (result === 'titre') {
         const titre = function (a, b) {
           if (a.title > b.title) {
@@ -306,7 +286,6 @@ class User {
     }
 
     const checkVideo = function (dataObj, username) {
-      // console.log(dataObj.image, dataObj.video);
       if (dataObj.video !== undefined) {
         videoPlayer.style.display = 'flex';
         videoPlayer.src = `../img/Sample Photos /${username}/${dataObj.video}`;
@@ -327,26 +306,18 @@ class User {
       }
     };
 
-    // Ecoute du clique = Bon
     allWork.forEach((item) => {
       item.addEventListener('click', (e) => {
         e.preventDefault();
 
         let [source] = e.target.src.split('/').slice(-1);
-        console.log(source);
 
         if (source.includes('%20')) {
           source = source.replace('%20', ' ');
-          console.log(source);
         }
 
         data.find((obj) => {
           if (obj.image === source || obj.video === source) {
-            // Check si vidéo ou image
-            // console.log(obj.image, source);
-            // console.log(obj.video, source);
-
-            // Ouverture de la modal
             sliderContainer.style.display = 'flex';
             checkVideo(obj, name);
 
@@ -388,10 +359,8 @@ class User {
             // eslint-disable-next-line no-inner-declarations
             function checkKey(e) {
               if (e.key == 'ArrowLeft') {
-                // left arrow
                 leftClick();
               } else if (e.key == 'ArrowRight') {
-                // right arrow
                 rightClick();
               }
             }
@@ -401,7 +370,6 @@ class User {
       });
     });
 
-    // Ecoute du focus = Bon
     work.forEach((el) => {
       el.addEventListener('focus', (e) => {
         let [source] = e.target.src.split('/').slice(-1);
@@ -414,7 +382,6 @@ class User {
           if (e.keyCode === 13) {
             data.find((obj) => {
               if (obj.image === source || obj.video === source) {
-                // Ouverture de la modal
                 sliderContainer.style.display = 'flex';
                 checkVideo(obj, name);
 
@@ -455,12 +422,9 @@ class User {
 
                 // eslint-disable-next-line no-inner-declarations
                 function checkKey(e) {
-                  // e = e || window.event;
                   if (e.key == 'ArrowLeft') {
-                    // left arrow
                     leftClick();
                   } else if (e.key == 'ArrowRight') {
-                    // right arrow
                     rightClick();
                   }
                 }

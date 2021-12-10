@@ -1,5 +1,8 @@
 'use strict';
 
+// eslint-disable-next-line import/extensions
+import Photographer from './photographer.js';
+
 const logo = document.querySelector('.logo');
 
 class App {
@@ -61,7 +64,6 @@ class App {
 
   clickPhotographer() {
     const photographers = document.querySelectorAll('.freelancer');
-    // Click
     photographers.forEach((item) => {
       item.addEventListener('click', (e) => {
         e.preventDefault();
@@ -70,11 +72,9 @@ class App {
       });
     });
 
-    // Focus
     photographers.forEach((item) => {
       item.addEventListener('focus', (e) => {
         const tag = e.target.textContent.toLowerCase().trim().slice(1);
-        // console.log(tag);
         document.addEventListener('keyup', (e) => {
           if (e.key === 'Enter') {
             this.filterPhotographer(tag);

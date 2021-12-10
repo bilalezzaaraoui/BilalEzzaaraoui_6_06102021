@@ -659,7 +659,7 @@ body .slider-container .slider-modal video {
      object-fit: contain;
 }
 
-body .slider-container p {
+body .slider-container h2 {
   margin-top: 3rem;
   color: #901c1c;
   font-weight: bold;

@@ -1,7 +1,6 @@
 // Element du DOM
 // Logo
 const logo = document.querySelector('.logo');
-
 // Information et portfolio de l'utilisateur
 const allInfo = document.querySelector('.info-user');
 const nameInfo = allInfo.querySelector('h1');
@@ -37,7 +36,6 @@ class User {
   }
 
   async getUrl() {
-    // Préparation du fichier JSON
     try {
       const request = await fetch('../data/data.json');
       if (!request.ok) throw new Error('La requête ne fonctionne pas');
@@ -289,7 +287,7 @@ class User {
       if (dataObj.video !== undefined) {
         videoPlayer.style.display = 'flex';
         videoPlayer.src = `../img/Sample Photos /${username}/${dataObj.video}`;
-        sliderContainer.querySelector('p').textContent = dataObj.title;
+        sliderContainer.querySelector('h2').textContent = dataObj.title;
       } else {
         videoPlayer.style.display = 'none';
       }
@@ -299,7 +297,7 @@ class User {
         sliderContainer.querySelector(
           'img'
         ).src = `../img/Sample Photos /${username}/${dataObj.image}`;
-        sliderContainer.querySelector('p').textContent = dataObj.title;
+        sliderContainer.querySelector('h2').textContent = dataObj.title;
         sliderContainer.querySelector('img').alt = dataObj.title;
       } else {
         sliderContainer.querySelector('img').style.display = 'none';

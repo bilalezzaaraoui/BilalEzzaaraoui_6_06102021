@@ -19,21 +19,34 @@
     />
     <link rel="stylesheet" href="../dist/css/user.css" />
     <link rel="stylesheet" href="../dist/css/media.css" />
-    <script defer src="../js/user.js"></script>
+    <script async src="../js/user.js"></script>
     <title>User - FishEye</title>
   </head>
   <body>
-    <header class="header-user" role="En-tête">
-      <section >
-        <a href="../index.html" class="logo" aria-label="Lien vers la page d'acceuil" tabindex="0">
+    <header class="header-user">
+      <div aria-label="Section pour le logo">
+        <a
+          href="../index.html"
+          class="logo"
+          aria-label="Lien vers la page d'acceuil"
+          tabindex="0"
+        >
           <img src="../img/logo.png" class="logo" alt="Fisheye Home Page" />
         </a>
-      </section>
+      </div>
     </header>
     <main class="main-user">
-      <section class="banner-layout" aria-label="Bannière d'information du photographe" tabindex="0">
+      <section
+        class="banner-layout"
+        aria-label="Bannière d'information du photographe"
+        tabindex="0"
+      >
         <div class="banner">
-          <div class="info-user" aria-label="Information du photographe" tabindex="0">
+          <div
+            class="info-user"
+            aria-label="Information du photographe"
+            tabindex="0"
+          >
             <h1></h1>
             <p class="info-city"></p>
             <p class="info-bio"></p>
@@ -42,61 +55,91 @@
             </nav>
           </div>
           <div class="info-contact">
-            <button role="button" aria-label="Contact Me" id="contact">Contactez-moi</button>
+            <button aria-label="Contact Me" id="contact">Contactez-moi</button>
           </div>
           <div class="info-img">
-            <img         
-              class="photo-img"
-              alt="Photo de profil" tabindex="0"
-            />
+            <img src="" class="photo-img" alt="Photo de profil" tabindex="0" />
           </div>
         </div>
       </section>
       <section class="filter" aria-label="Section filtre du portfolio">
         <label id="filter-titre">Trier par</label>
-          <select class="dropdown-content" tabindex="0">
-            <option class="option-order" value="popularité">Popularité</option>
-            <option class="option-order" value="date">Date</option>
-            <option class="option-order" value="titre">Titre</option>
-          </select>
+        <select class="dropdown-content" tabindex="0">
+          <option class="option-order" value="popularité">Popularité</option>
+          <option class="option-order" value="date">Date</option>
+          <option class="option-order" value="titre">Titre</option>
+        </select>
       </section>
       <section class="photo" aria-label="Portfolio de l'artiste"></section>
       <div class="total-like" tabindex="0">
-        <span class="like-counter" aria-label="Nombre total de like">284 876<em class="fas fa-heart"></em></span>
-        <span class="price-counter" aria-label="Tarif du photographe">400€ / jour</span>
+        <span class="like-counter" aria-label="Nombre total de like"
+          >284 876<em class="fas fa-heart"></em
+        ></span>
+        <span class="price-counter" aria-label="Tarif du photographe"
+          >400€ / jour</span
+        >
       </div>
     </main>
     <section class="overlay-modal hidden" aria-label="Formulaire de contact">
       <div class="modal">
-        <em class="fas fa-times" role="Bouton de fermeture du formulaire de contact"></em>
-        <p>Contactez-moi </br><span class="user-contact">Mimi Keel</span></p>
+        <em
+          class="fas fa-times"
+          aria-label="Bouton de fermeture du formulaire de contact"
+        ></em>
+        <p>Contactez-moi <br /><span class="user-contact">Mimi Keel</span></p>
         <form>
           <label for="prenom">Prénom</label><br />
-          <input type="text" id="prenom" name="prenom" class="form" placeholder="Prénom..."/><br />
+          <input
+            type="text"
+            id="prenom"
+            name="prenom"
+            class="form"
+            placeholder="Prénom..."
+          /><br />
           <label for="nom">Nom</label><br />
-          <input type="text" id="nom" name="nom" class="form" placeholder="Nom..."/><br />
+          <input
+            type="text"
+            id="nom"
+            name="nom"
+            class="form"
+            placeholder="Nom..."
+          /><br />
           <label for="email">Email</label><br />
-          <input type="text" id="email" name="email" class="form" placeholder="Email..."/><br />
+          <input
+            type="text"
+            id="email"
+            name="email"
+            class="form"
+            placeholder="Email..."
+          /><br />
           <label for="message">Message</label><br />
-          <textarea id="message" 
-          name="message" rows="4" cols="50" 
-          class="form" 
-          placeholder="Votre texte..."></textarea>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            cols="50"
+            class="form"
+            placeholder="Votre texte..."
+          ></textarea>
           <br /><br />
-          <input type="submit" value="Submit" id="submit"/>
+          <input type="submit" value="Submit" id="submit" />
         </form>
       </div>
     </section>
 
     <section class="slider-container">
-      <em class="fas fa-times fa-croix" role="button" aria-label="Close dialog"></em>
-      <div class="slider-modal" role="Image dans le slider" aria-label="Image closeup view">
+      <em
+        class="fas fa-times fa-croix"
+        role="button"
+        aria-label="Close dialog"
+      ></em>
+      <div class="slider-modal" aria-label="Image closeup view">
         <em class="fas fa-angle-left" aria-label="Previous image"></em>
-        <img src="" alt="L'image du photographe">
+        <img src="" alt="L'image du photographe" />
         <video src="" controls autoplay class="video-player"></video>
         <em class="fas fa-angle-right" aria-label="Next image"></em>
       </div>
-      <p>Exemple</p>
+      <h2>Exemple</h2>
     </section>
   </body>
 </html>

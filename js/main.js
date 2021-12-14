@@ -32,14 +32,14 @@ class App {
 
   displayPhotographer(photographers) {
     let html = '';
+    console.log(photographers);
     photographers.forEach((data) => {
       html += `<article class="photo" aria-label="Profil de ${data.name}">
               <a href="#" aria-label="Lien du photographe">
                 <img
                   src="img/Photographers ID Photos/${data.portrait}"
                   class="photo-img"
-                  aria-label="Photo de profil de ${data.name}"
-                  alt=""
+                  alt="${data.alt}"
                 />
                 <h2 aria-label="Nom du photographe">${data.name}</h2>
               </a>

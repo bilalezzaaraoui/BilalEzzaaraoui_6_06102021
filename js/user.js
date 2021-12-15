@@ -111,7 +111,7 @@ class User {
               <p class="line" tabindex="0">${item.title}</p>
               <div class="card-footer-likes" aria-label="likes" tabindex="0">
                 <p>${item.likes}</p>
-                <em class="fas fa-heart"></em>
+                <em class="far fa-heart fa-coeur"></em>
               </div>
             </div>
           </a>
@@ -126,7 +126,7 @@ class User {
               <p class="line" tabindex="0">${item.title}</p>
               <div class="card-footer-likes" aria-label="likes" tabindex="0">
                 <p>${item.likes}</p>
-                <em class="fas fa-heart"></em>
+                <em class="far fa-heart fa-coeur"></em>
               </div>
             </div>
           </a>
@@ -143,20 +143,84 @@ class User {
 
     likesBtn.forEach((el) => {
       el.addEventListener('click', (e) => {
-        const likeDom = e.target.parentElement.querySelector('p');
-        const likeData = data.find((item) => {
-          if (item.likes == likeDom.textContent) {
+        // Titre de la carte
+        const card = e.target.closest('.card');
+        const cardTitle = card.querySelector('.line').textContent;
+
+        // Objet correspondant au titre
+        const dataCard = data.find((item) => {
+          if (item.title === cardTitle) {
             return item;
           }
         });
+
+        // Nombre de likes dans le dom
+        const textLikes = e.target.parentElement.querySelector('p');
+        const heartIcon = e.target;
+
+        let numberLike = dataCard.likes;
+        const targetLike = dataCard.likes;
+
+        // console.log(numberLike, Number(textLikes.textContent), dataCard.likes);
+        // console.log(
+        //   typeof numberLike,
+        //   typeof textLikes.textContent,
+        //   typeof dataCard.likes
+        // );
+
+        if (Number(textLikes.textContent) === targetLike) {
+          // eslint-disable-next-line no-plusplus
+          textLikes.textContent = ++numberLike;
+          heartIcon.classList.replace('far', 'fas');
+          // dataCard.likes = numberLike;
+          // console.log(
+          //   Number(textLikes.textContent),
+          //   targetLike,
+          //   dataCard.likes,
+          //   numberLike
+          // );
+        } else if (Number(textLikes.textContent) !== dataCard.likes) {
+          console.log(
+            Number(textLikes.textContent),
+            dataCard.likes,
+            numberLike
+          );
+          // eslint-disable-next-line no-plusplus
+          // dataCard.likes = --numberLike;
+          // eslint-disable-next-line no-plusplus
+          textLikes.textContent = numberLike;
+          heartIcon.classList.replace('fas', 'far');
+        }
+
+        const divLikes = Array.from(document.querySelectorAll('.fa-coeur'));
+
+        const totalLikes = divLikes.filter((el) => {
+          if (el.classList.contains('fas')) {
+            return el;
+          }
+        });
+        console.log(totalLikes.length);
+
+        // if (dataCard.likes === numberLike) {
+        //   // eslint-disable-next-line no-plusplus
+        //   textLikes.textContent = ++numberLike;
+        //   console.log(dataCard.likes, numberLike);
+        // }
+        // else {
+        //   // console.log(dataCard.likes, numberLike);
+        //   // eslint-disable-next-line no-plusplus
+        //   // textLikes.textContent = --dataCard.likes;
+        //   console.log('non');
+        // }
+
         // eslint-disable-next-line no-plusplus
-        likeDom.textContent = ++likeData.likes;
-        this.updateLikes(data);
+        // likeDom.textContent = ++likeData.likes;
+        this.updateLikes(data, totalLikes.length);
       });
     });
   }
 
-  updateLikes(data) {
+  updateLikes(data, target) {
     const likeCounter = document.querySelector('.like-counter');
 
     const likesMap = data.map((item) => item.likes);
@@ -165,7 +229,9 @@ class User {
 
     const total = likesMap.reduce(getTotal, 0);
 
-    likeCounter.innerHTML = `${total} <i class="fas fa-heart"></i>`;
+    likeCounter.innerHTML = `${
+      total + target ? total + target : total
+    } <i class="fas fa-heart"></i>`;
   }
 
   contact(user) {

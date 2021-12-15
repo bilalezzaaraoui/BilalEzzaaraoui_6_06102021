@@ -11,6 +11,7 @@ class App {
   constructor() {
     this.getData();
     this.clickPhotographer();
+    this.scrollButton();
   }
 
   async getData() {
@@ -30,9 +31,26 @@ class App {
     }
   }
 
+  scrollButton() {
+    const button = document.querySelector('.btn-content');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+
+      if (y >= 130) {
+        button.style.display = 'flex';
+      } else {
+        button.style.display = 'none';
+      }
+    });
+    console.log(button.querySelector('a'));
+    button.querySelector('a').addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log(window.location);
+    });
+  }
+
   displayPhotographer(photographers) {
     let html = '';
-    console.log(photographers);
     photographers.forEach((data) => {
       html += `<article class="photo" aria-label="Profil de ${data.name}">
               <a href="#" aria-label="Lien du photographe">
@@ -67,8 +85,18 @@ class App {
     photographers.forEach((item) => {
       item.addEventListener('click', (e) => {
         e.preventDefault();
-        const tag = e.target.textContent.toLowerCase().trim().slice(1);
-        this.filterPhotographer(tag);
+        const firstParent = e.target.parentElement;
+        if (firstParent) {
+          firstParent.classList.replace('off', 'active');
+          const tag = e.target.textContent.toLowerCase().trim().slice(1);
+          this.filterPhotographer(tag);
+        }
+
+        document.querySelectorAll('.list').forEach((el) => {
+          if (el !== firstParent) {
+            el.classList.replace('active', 'off');
+          }
+        });
       });
     });
 

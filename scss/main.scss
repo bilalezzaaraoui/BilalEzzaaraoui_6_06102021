@@ -21,6 +21,24 @@ body {
   height: auto;
   font-family: 'DM Sans', sans-serif;
 
+  .btn-content {
+    position: fixed;
+    top: 2%;
+    width: 90%;
+    display: none;
+    justify-content: center;
+
+    a {
+      background-color: $secondary5;
+      padding: 0.7rem 1.3rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #000;
+    }
+  }
+
   .head {
     max-width: 95%;
     height: auto;
@@ -49,8 +67,18 @@ body {
         justify-content: center;
         flex-wrap: wrap;
 
-        li {
+        .active {
           @include Btn;
+          background-color: $primaryFirst !important;
+          span {
+            color: $secondary3;
+            font-weight: 700;
+          }
+        }
+
+        .off {
+          @include Btn;
+          cursor: pointer;
 
           span {
             font-size: 1rem;
@@ -59,9 +87,8 @@ body {
           }
 
           &:hover {
-            background-color: $primaryFirst;
+            background-color: $primaryFirst !important;
             border: 1px solid $primaryFirst;
-
             span {
               color: $secondary3;
             }

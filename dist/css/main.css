@@ -20,6 +20,26 @@ body {
   font-family: 'DM Sans', sans-serif;
 }
 
+body .btn-content {
+  position: fixed;
+  top: 2%;
+  width: 90%;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .btn-content a {
+  background-color: #dc8876;
+  padding: 0.7rem 1.3rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #000;
+}
+
 body .head {
   max-width: 95%;
   height: auto;
@@ -69,25 +89,39 @@ body .head nav ul {
       flex-wrap: wrap;
 }
 
-body .head nav ul li {
+body .head nav ul .active {
   padding: 1px 4px;
   border: 1px solid #525252;
   border-radius: 25px;
   margin: 0 5px;
+  background-color: #901c1c !important;
 }
 
-body .head nav ul li span {
+body .head nav ul .active span {
+  color: #fafafa;
+  font-weight: 700;
+}
+
+body .head nav ul .off {
+  padding: 1px 4px;
+  border: 1px solid #525252;
+  border-radius: 25px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+body .head nav ul .off span {
   font-size: 1rem;
   color: #901c1c;
   font-weight: 700;
 }
 
-body .head nav ul li:hover {
-  background-color: #901c1c;
+body .head nav ul .off:hover {
+  background-color: #901c1c !important;
   border: 1px solid #901c1c;
 }
 
-body .head nav ul li:hover span {
+body .head nav ul .off:hover span {
   color: #fafafa;
 }
 

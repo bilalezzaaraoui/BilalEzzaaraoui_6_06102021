@@ -162,6 +162,7 @@ class User {
         const targetLike = dataCard.likes;
 
         if (Number(textLikes.textContent) === targetLike) {
+          // eslint-disable-next-line no-plusplus
           textLikes.textContent = ++numberLike;
           heartIcon.classList.replace('far', 'fas');
         } else if (Number(textLikes.textContent) !== dataCard.likes) {

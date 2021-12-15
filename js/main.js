@@ -43,10 +43,10 @@ class App {
       }
     });
     console.log(button.querySelector('a'));
-    button.querySelector('a').addEventListener('click', (e) => {
-      e.preventDefault();
-      console.log(window.location);
-    });
+    // button.querySelector('a').addEventListener('click', (e) => {
+    //   e.preventDefault();
+    //   console.log(window.location);
+    // });
   }
 
   displayPhotographer(photographers) {

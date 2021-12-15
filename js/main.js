@@ -140,6 +140,8 @@ class App {
               // eslint-disable-next-line no-restricted-globals
               `${location.href}pages/user.html?id=${item.id}`
             );
+            console.log(window.location);
+            console.log(window.location.href.split('/'));
 
             window.location = url;
           }

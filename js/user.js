@@ -161,33 +161,10 @@ class User {
         let numberLike = dataCard.likes;
         const targetLike = dataCard.likes;
 
-        // console.log(numberLike, Number(textLikes.textContent), dataCard.likes);
-        // console.log(
-        //   typeof numberLike,
-        //   typeof textLikes.textContent,
-        //   typeof dataCard.likes
-        // );
-
         if (Number(textLikes.textContent) === targetLike) {
-          // eslint-disable-next-line no-plusplus
           textLikes.textContent = ++numberLike;
           heartIcon.classList.replace('far', 'fas');
-          // dataCard.likes = numberLike;
-          // console.log(
-          //   Number(textLikes.textContent),
-          //   targetLike,
-          //   dataCard.likes,
-          //   numberLike
-          // );
         } else if (Number(textLikes.textContent) !== dataCard.likes) {
-          console.log(
-            Number(textLikes.textContent),
-            dataCard.likes,
-            numberLike
-          );
-          // eslint-disable-next-line no-plusplus
-          // dataCard.likes = --numberLike;
-          // eslint-disable-next-line no-plusplus
           textLikes.textContent = numberLike;
           heartIcon.classList.replace('fas', 'far');
         }
@@ -199,22 +176,6 @@ class User {
             return el;
           }
         });
-        console.log(totalLikes.length);
-
-        // if (dataCard.likes === numberLike) {
-        //   // eslint-disable-next-line no-plusplus
-        //   textLikes.textContent = ++numberLike;
-        //   console.log(dataCard.likes, numberLike);
-        // }
-        // else {
-        //   // console.log(dataCard.likes, numberLike);
-        //   // eslint-disable-next-line no-plusplus
-        //   // textLikes.textContent = --dataCard.likes;
-        //   console.log('non');
-        // }
-
-        // eslint-disable-next-line no-plusplus
-        // likeDom.textContent = ++likeData.likes;
         this.updateLikes(data, totalLikes.length);
       });
     });

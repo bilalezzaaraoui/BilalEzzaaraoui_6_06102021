@@ -42,11 +42,6 @@ class App {
         button.style.display = 'none';
       }
     });
-    console.log(button.querySelector('a'));
-    // button.querySelector('a').addEventListener('click', (e) => {
-    //   e.preventDefault();
-    //   console.log(window.location);
-    // });
   }
 
   displayPhotographer(photographers) {
@@ -129,23 +124,13 @@ class App {
         // eslint-disable-next-line array-callback-return
         this.photographersList.find((item) => {
           if (item.name === index) {
-            // Live server
-            // const url = new URL(
-            //   // eslint-disable-next-line no-restricted-globals
-            //   `${location.origin}/pages/user.html?id=${item.id}`
-            // );
-
-            // Github
             const url = new URL(
               // eslint-disable-next-line no-restricted-globals
               `${location.origin + location.pathname}pages/user.html?id=${
                 item.id
               }`
             );
-            console.log(url);
-            console.log(window.location);
-
-            // window.location = url;
+            window.location = url;
           }
         });
       });

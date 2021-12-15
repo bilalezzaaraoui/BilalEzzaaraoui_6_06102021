@@ -142,8 +142,8 @@ class App {
                 item.id
               }`
             );
+            console.log(url);
             console.log(window.location);
-            console.log(window.location.href.split('/'));
 
             // window.location = url;
           }

@@ -143,7 +143,7 @@ class App {
             console.log(window.location);
             console.log(window.location.href.split('/'));
 
-            window.location = url;
+            // window.location = url;
           }
         });
       });
